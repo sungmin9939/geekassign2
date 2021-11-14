@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 void main() => runApp(frontend());
 
 Future<Userdata> fetchUser() async {
-  String url = "http://10.0.2.2:8000";
+  String url = "http://10.0.2.2:8080";
   final response = await http.get(Uri.parse(url));
 
   if (response.statusCode == 200) {
