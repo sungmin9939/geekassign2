@@ -6,10 +6,10 @@ import 'package:http/http.dart' as http;
 void main() => runApp(frontend());
 
 Future<Userdata> fetchUser() async {
-  String url = "http://0.0.0.0:8080";
+  String url = "http://10.0.2.2:8000";
   final response = await http.get(Uri.parse(url));
 
-  if (response == 200) {
+  if (response.statusCode == 200) {
     return Userdata.fromJson(jsonDecode(response.body));
   } else {
     throw Exception('Failed');
